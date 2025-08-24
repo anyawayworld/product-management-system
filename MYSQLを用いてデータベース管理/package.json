@@ -1,0 +1,62 @@
+{
+  "name": "product-management-system",
+  "version": "1.0.0",
+  "description": "商品管理システム（MySQL連携）",
+  "main": "index.js",
+  "scripts": {
+    "setup": "cd scripts && setup-complete-system.bat",
+    "setup-db": "node scripts/setup-database.js",
+    "test-performance": "cd scripts && mysql -u root -p --default-character-set=utf8mb4 < performance_test_queries.sql",
+    "start-backend": "cd backend && npm run dev",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "start": "cd backend && npm start",
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "product-management",
+    "inventory",
+    "mysql",
+    "react",
+    "nodejs",
+    "typescript",
+    "express",
+    "real-business-volume"
+  ],
+  "author": "anyawayworld",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/product-management-system.git"
+  },
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.2.1",
+    "@types/react": "^18.3.20",
+    "@types/react-dom": "^18.3.6",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.21",
+    "concurrently": "^8.2.2",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "postcss": "^8.4.32",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.8",
+    "tailwindcss": "^3.4.17",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5.8.2",
+    "vite": "^5.4.1",
+    "vite-plugin-checker": "^0.9.1"
+  }
+}
