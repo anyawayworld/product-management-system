@@ -1,0 +1,74 @@
+ローカル環境での実行方法
+
+前提条件の確認
+
+# MySQLがインストールされているか確認
+mysql --version
+
+# Node.js確認（JSスクリプト用）
+node --version
+
+
+Windows環境での実行
+
+# 1. 文字エンコーディング設定
+chcp 65001
+
+# 2. MySQLディレクトリに移動
+cd C:\Users\a8bko\Desktop\アプリ作成関係\ZeroPlus Gate (1)\入学後\教材\卒業制作\MYSQLを用いてデータベース管理\scripts
+
+# 3. テーブル作成（修正版）
+mysql -u root -p --default-character-set=utf8mb4 < mysql-setup-fixed.sql
+
+# 4. 日本語データ挿入
+mysql -u root -p --default-character-set=utf8mb4 inventory_management < mysql-japanese-data.sql
+
+# 5. データ確認
+mysql -u root -p --default-character-set=utf8mb4 inventory_management -e "SELECT COUNT(*) FROM inventory; SELECT product_name, category FROM inventory LIMIT 5;"
+
+
+データ確認クエリ
+-- 総件数確認
+SELECT COUNT(*) as total_count FROM inventory;
+
+-- 日本語データ確認
+SELECT product_name, category, order_staff FROM inventory WHERE product_code >= 'P000006';
+
+-- 文字セット確認
+SHOW VARIABLES LIKE 'character_set%';
+
+5000件のデータベース作成
+
+テーブル作成
+# 文字セット対応テーブル作成
+mysql -u root -p --default-character-set=utf8mb4 inventory_management < create-inventory-5000.sql
+
+5000件データ生成
+# v0で実行ボタンをクリック、または
+node scripts/generate-5000-data.js
+
+データ挿入
+# 生成されたSQLファイルを実行
+mysql -u root -p --default-character-set=utf8mb4 inventory_management < insert_5000_data.sql
+
+データ分析
+# 分析クエリ実行
+mysql -u root -p --default-character-set=utf8mb4 inventory_management < analysis-5000.sql
+
+CSV出力（オプション）
+# Node.jsでCSV出力
+node scripts/csv-export-5000.js
+
+Node.jsスクリプトの実行
+
+# プロジェクトフォルダで実行
+npm init -y
+npm install mysql2
+
+
+# 文字セット確認スクリプト実行
+node scripts/check-mysql-charset.js
+
+
+
+ Webサイトでデータベースを作成するさいUIやデザインを紹介しているサイトを教えてください

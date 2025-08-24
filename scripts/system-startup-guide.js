@@ -1,0 +1,76 @@
+// システム起動ガイド
+
+console.log("🚀 商品管理システム起動ガイド")
+console.log("=".repeat(60))
+
+console.log("\n📊 システム仕様:")
+console.log("  - 商品データ: 5,000件")
+console.log("  - 取引履歴: 約75,000件（12ヶ月間）")
+console.log("  - リアルタイム検索・フィルタリング")
+console.log("  - CSV出力機能")
+console.log("  - 在庫アラート機能")
+console.log("  - ダッシュボード統計")
+
+console.log("\n🔧 起動手順:")
+console.log("1. データベースセットアップ（完了）")
+console.log("   ✅ MySQL データベース作成")
+console.log("   ✅ 5,000件の商品データ生成")
+console.log("   ✅ 75,000件の取引データ生成")
+
+console.log("\n2. バックエンドサーバー起動:")
+console.log("   cd backend")
+console.log("   npm install")
+console.log("   npm run dev")
+console.log("   → http://localhost:5000 で API サーバー起動")
+
+console.log("\n3. フロントエンドアプリ起動:")
+console.log("   cd frontend")
+console.log("   npm install")
+console.log("   npm run dev")
+console.log("   → http://localhost:3000 でWebアプリ起動")
+
+console.log("\n🎯 主要機能:")
+console.log("  📊 ダッシュボード:")
+console.log("    - 統計情報表示")
+console.log("    - 売れ筋商品TOP5")
+console.log("    - 最近の取引履歴")
+console.log("    - 在庫アラート")
+
+console.log("\n  📦 商品管理:")
+console.log("    - 5,000件の商品一覧")
+console.log("    - 検索・フィルタリング")
+console.log("    - 在庫状況表示")
+console.log("    - CSV出力")
+
+console.log("\n  📋 取引履歴:")
+console.log("    - 75,000件の取引データ")
+console.log("    - 新規取引登録")
+console.log("    - 期間指定検索")
+console.log("    - 取引種別フィルタ")
+
+console.log("\n  📈 レポート:")
+console.log("    - 在庫サマリー")
+console.log("    - 在庫アラート")
+console.log("    - 月次売上レポート")
+console.log("    - 担当者別実績")
+
+console.log("\n⚡ パフォーマンス:")
+console.log("  - インデックス最適化済み")
+console.log("  - ページネーション対応")
+console.log("  - 大量データ高速検索")
+console.log("  - リアルタイム更新")
+
+console.log("\n🔒 セキュリティ:")
+console.log("  - SQLインジェクション対策")
+console.log("  - 入力値検証")
+console.log("  - CORS設定")
+console.log("  - エラーハンドリング")
+
+console.log("\n📱 UI/UX:")
+console.log("  - レスポンシブデザイン")
+console.log("  - 直感的な操作")
+console.log("  - リアルタイム通知")
+console.log("  - 日本語完全対応")
+
+console.log("\n" + "=".repeat(60))
+console.log("🎉 本格的な商品管理システムをお楽しみください！")
